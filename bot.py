@@ -2,6 +2,10 @@ import pandas as pd
 import requests
 import time
 from datetime import datetime
+import os
+
+TOKEN = os.getenv("TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 
 TOKEN = "8738482142:AAFpajOqPqnceqS9wc91ai-5rc0Xlfvgw-A"
 CHAT_ID = "6656459688"
@@ -89,5 +93,6 @@ while True:
     if signal:
         message = format_msg(signal, confidence)
         send_telegram(message)
+
 
     time.sleep(60)
